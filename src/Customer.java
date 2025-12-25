@@ -5,7 +5,7 @@ public class Customer {
     private String email;
     private double balance;
 
-    // Constructor
+
     public Customer(int id, String name, String email, double balance) {
         this.id = id;
         this.name = name;
@@ -13,7 +13,7 @@ public class Customer {
         this.balance = balance;
     }
 
-    // Getters
+
     public int getId() {
         return id;
     }
@@ -27,7 +27,7 @@ public class Customer {
         return balance;
     }
 
-    // Setters
+
     public void setId(int id) {
         this.id = id;
     }

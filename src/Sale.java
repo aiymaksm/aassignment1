@@ -5,7 +5,7 @@ public class Sale {
     private Customer customer;
     private int quantity;
 
-    // Constructor
+
     public Sale(int saleId, Product product, Customer customer, int quantity) {
         this.saleId = saleId;
         this.product = product;
@@ -13,7 +13,7 @@ public class Sale {
         this.quantity = quantity;
     }
 
-    // Getters
+
     public int getSaleId() {
         return saleId;
     }
@@ -27,7 +27,7 @@ public class Sale {
         return quantity;
     }
 
-    // Setters
+
     public void setSaleId(int saleId) {
         this.saleId = saleId;
     }
