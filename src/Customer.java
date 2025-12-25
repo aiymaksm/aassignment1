@@ -17,15 +17,12 @@ public class Customer {
     public int getId() {
         return id;
     }
-
     public String getName() {
         return name;
     }
-
     public String getEmail() {
         return email;
     }
-
     public double getBalance() {
         return balance;
     }
@@ -34,7 +31,6 @@ public class Customer {
     public void setId(int id) {
         this.id = id;
     }
-
     public void setName(String name) {
         this.name = name;
     }

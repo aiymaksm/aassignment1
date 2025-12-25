@@ -17,15 +17,12 @@ public class Sale {
     public int getSaleId() {
         return saleId;
     }
-
     public Product getProduct() {
         return product;
     }
-
     public Customer getCustomer() {
         return customer;
     }
-
     public int getQuantity() {
         return quantity;
     }

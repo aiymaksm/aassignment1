@@ -5,7 +5,7 @@ public class Product {
     private double price;
     private int stockQuantity;
 
-    // Constructor
+
     public Product(int id, String name, double price, int stockQuantity) {
         this.id = id;
         this.name = name;
@@ -13,7 +13,7 @@ public class Product {
         this.stockQuantity = stockQuantity;
     }
 
-    // Getters
+
     public int getId() {
         return id;
     }
@@ -30,7 +30,7 @@ public class Product {
         return stockQuantity;
     }
 
-    // Setters
+
     public void setId(int id) {
         this.id = id;
     }
