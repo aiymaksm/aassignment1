@@ -1,70 +1,34 @@
 public class Product {
 
-    private int id;
-    private String name;
-    private double price;
-    private int stockQuantity;
+    protected String name;
+    protected double price;
+    protected String category;
+    protected int stock;
 
-
-    public Product(int id, String name, double price, int stockQuantity) {
-        this.id = id;
+    // parameterized constructor
+    public Product(String name, double price, String category, int stock) {
         this.name = name;
         this.price = price;
-        this.stockQuantity = stockQuantity;
+        this.category = category;
+        this.stock = stock;
     }
 
-
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public double getPrice() {
+    // method 1
+    public double getFinalPrice() {
         return price;
     }
 
-    public int getStockQuantity() {
-        return stockQuantity;
+    // method 2
+    public void displayInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Category: " + category);
+        System.out.println("Price: $" + price);
+        System.out.println("Stock: " + stock);
     }
 
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public void setStockQuantity(int stockQuantity) {
-        this.stockQuantity = stockQuantity;
-    }
-
-    // Logic methods
-    public boolean isInStock() {
-        return stockQuantity > 0;
-    }
-
-    public void reduceStock(int amount) {
-        if (amount <= stockQuantity) {
-            stockQuantity -= amount;
-        }
-    }
-
-    @Override
-    public String toString() {
-        return "Product{id=" + id +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                ", stockQuantity=" + stockQuantity +
-                '}';
+    // method 3 (action method)
+    public void restock(int amount) {
+        stock += amount;
+        System.out.println(name + " restocked. New stock: " + stock);
     }
 }
-
