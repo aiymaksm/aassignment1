@@ -3,7 +3,7 @@ public class FreshProduct extends Product {
     private int shelfLifeDays;
 
     public FreshProduct(String name, double price, String category, int stock, int shelfLifeDays) {
-        super(name, price, category, stock); // FIRST LINE
+        super(name, price, category, stock);
         this.shelfLifeDays = shelfLifeDays;
     }
 
