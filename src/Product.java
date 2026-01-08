@@ -5,20 +5,36 @@ public class Product {
     protected String category;
     protected int stock;
 
-    // parameterized constructor
+
     public Product(String name, double price, String category, int stock) {
         this.name = name;
-        this.price = price;
+        setPrice(price);   // validation
+        setStock(stock);   // validation
         this.category = category;
-        this.stock = stock;
     }
 
-    // method 1
+
+    public void setPrice(double price) {
+        if (price > 0) {
+            this.price = price;
+        } else {
+            System.out.println("Invalid price! Price must be positive.");
+        }
+    }
+
+
+    public void setStock(int stock) {
+        if (stock >= 0) {
+            this.stock = stock;
+        } else {
+            System.out.println("Invalid stock! Stock cannot be negative.");
+        }
+    }
+
     public double getFinalPrice() {
         return price;
     }
 
-    // method 2
     public void displayInfo() {
         System.out.println("Name: " + name);
         System.out.println("Category: " + category);
@@ -26,7 +42,6 @@ public class Product {
         System.out.println("Stock: " + stock);
     }
 
-    // method 3 (action method)
     public void restock(int amount) {
         stock += amount;
         System.out.println(name + " restocked. New stock: " + stock);
