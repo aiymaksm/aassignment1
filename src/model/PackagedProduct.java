@@ -1,15 +1,17 @@
+package model;
+
 public class PackagedProduct extends Product {
 
     private String brand;
 
     public PackagedProduct(String name, double price, String category, int stock, String brand) {
-        super(name, price, category, stock); // FIRST LINE
-        this.brand = brand;
+        super(name, price, category, stock);
+        setBrand(brand);
     }
 
     @Override
     public double getFinalPrice() {
-        return price; // no discount
+        return price;
     }
 
     @Override
@@ -19,12 +21,15 @@ public class PackagedProduct extends Product {
         System.out.println("Brand: " + brand);
     }
 
-    // unique methods
+    public void setBrand(String brand) {
+        if (brand == null || brand.trim().isEmpty()) {
+            throw new IllegalArgumentException("Brand cannot be empty");
+        }
+        this.brand = brand;
+    }
+
     public String getBrand() {
         return brand;
     }
-
-    public void changeBrand(String newBrand) {
-        brand = newBrand;
-    }
 }
+
