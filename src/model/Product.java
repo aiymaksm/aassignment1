@@ -19,17 +19,18 @@ public abstract class Product {
 
     public void displayInfo() {
         System.out.println("Name: " + name);
+        System.out.println("Price: " + price);
         System.out.println("Category: " + category);
-        System.out.println("Price: $" + price);
         System.out.println("Stock: " + stock);
     }
 
     public void restock(int amount) {
         if (amount <= 0) {
-            throw new IllegalArgumentException("Restock amount must be positive");
+            throw new IllegalArgumentException("Amount must be greater than zero");
         }
         stock += amount;
     }
+
 
 
     public void setName(String name) {
@@ -41,7 +42,7 @@ public abstract class Product {
 
     public void setPrice(double price) {
         if (price <= 0) {
-            throw new IllegalArgumentException("Price must be positive");
+            throw new IllegalArgumentException("Price must be greater than zero");
         }
         this.price = price;
     }
