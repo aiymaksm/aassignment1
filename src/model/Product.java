@@ -14,7 +14,7 @@ public abstract class Product {
         setStock(stock);
     }
 
-    // ABSTRACT METHOD (REQUIRED)
+
     public abstract double getFinalPrice();
 
     public void displayInfo() {
@@ -31,7 +31,7 @@ public abstract class Product {
         stock += amount;
     }
 
-    // ===== SETTERS WITH EXCEPTIONS =====
+
     public void setName(String name) {
         if (name == null || name.trim().isEmpty()) {
             throw new IllegalArgumentException("Product name cannot be empty");
