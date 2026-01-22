@@ -4,13 +4,14 @@ import model.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class MenuManager implements Menu {
+public class MenuManager implements Menu{
 
     private ArrayList<Product> products = new ArrayList<>();
     private Scanner scanner = new Scanner(System.in);
 
+
     public MenuManager() {
-        products.add(new FreshProduct("Milk", 2.5, "Dairy", 10, 2));
+        products.add(new FreshProduct ("Milk", 2.5, "Dairy", 10,2 ));
         products.add(new PackagedProduct("Chips", 1.5, "Snacks", 30, "Lays"));
         products.add(new FreshProduct("Bread", 1.2, "Bakery", 15, 1));
     }
@@ -38,12 +39,28 @@ public class MenuManager implements Menu {
                 int choice = Integer.parseInt(scanner.nextLine());
 
                 switch (choice) {
-                    case 1 -> addFreshProduct();
-                    case 2 -> addPackagedProduct();
-                    case 3 -> viewAllProducts();
-                    case 4 -> viewFreshProductsOnly();
-                    case 0 -> running = false;
-                    default -> System.out.println("Invalid choice.");
+                    case 1:
+                        addFreshProduct();
+                        break;
+
+                    case 2:
+                        addPackagedProduct();
+                        break;
+
+                    case 3:
+                        viewAllProducts();
+                        break;
+
+                    case 4:
+                        viewFreshProductsOnly();
+                        break;
+
+                    case 0:
+                        running = false;
+                        break;
+
+                    default:
+                        System.out.println("Invalid choice.");
                 }
 
             } catch (NumberFormatException e) {
@@ -52,8 +69,10 @@ public class MenuManager implements Menu {
                 System.out.println("Error: " + e.getMessage());
             }
         }
+
         scanner.close();
     }
+
 
     private void addFreshProduct() {
         System.out.print("Name: ");
