@@ -1,17 +1,23 @@
 package model;
 
-public class FreshProduct extends Product implements Expirable {
-
+public class FreshProduct extends Product {
     private int shelfLifeDays;
 
-    public FreshProduct(String name, double price, String category, int stock, int shelfLifeDays) {
+    public FreshProduct(int productId, String name, double price, String category,
+                        int stock, int shelfLifeDays) {
+        super(productId, name, price, category, stock);
+        this.shelfLifeDays = shelfLifeDays;
+    }
+
+    public FreshProduct(String name, double price, String category,
+                        int stock, int shelfLifeDays) {
         super(name, price, category, stock);
-        setShelfLifeDays(shelfLifeDays);
+        this.shelfLifeDays = shelfLifeDays;
     }
 
     @Override
     public double getFinalPrice() {
-        return price * 0.9; // 10% discount
+        return price * 0.9;
     }
 
     @Override
@@ -21,22 +27,15 @@ public class FreshProduct extends Product implements Expirable {
         System.out.println("Shelf life: " + shelfLifeDays + " days");
     }
 
-    @Override
     public boolean isExpiringSoon() {
         return shelfLifeDays <= 2;
     }
 
-    public void reduceShelfLife() {
-        if (shelfLifeDays <= 0) {
-            throw new IllegalArgumentException("Shelf life cannot be negative");
-        }
-        shelfLifeDays--;
+    public int getShelfLifeDays() {
+        return shelfLifeDays;
     }
 
     public void setShelfLifeDays(int shelfLifeDays) {
-        if (shelfLifeDays <= 0) {
-            throw new IllegalArgumentException("Shelf life must be positive");
-        }
         this.shelfLifeDays = shelfLifeDays;
     }
 }
